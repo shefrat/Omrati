@@ -1,0 +1,168 @@
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>قيّم عمرتك</title>
+
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="{%static 'bootstrap-rtl.css'%}" rel="stylesheet">
+
+</head>
+<body>
+    <center>
+    <div class="container">
+        <form action="{%url 'eval' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                    <label>اسم وكالة الأسفار</label>
+                    {{ f.agencyName}}
+            </div>
+            <div class="form-group">
+                    <label>تاريخ السفر</label>
+                    {{ f.dateOfTravel}}
+            </div>
+            <div class="form-group">
+                    <label>مدة العمرة بأيام</label>
+                    {{ f.days}}
+            </div>
+            <div class="form-group">
+                    <label>ثمن الرحلة بالدينار</label>
+                    {{ f.price}}
+            </div>
+            <div class="form-group">
+                    <label>هل أمضيت على عقد عمرة مع وكالة الأسفار؟</label>
+                    {{ f.contract}}
+            </div>
+            <div class="form-group">
+                    <label>هل اطلعت على عقد تأمين رحلتك؟</label>
+                    {{ f.insurance}}
+            </div>
+            <div class="form-group">
+                    <label>هل التزمت الوكالة بالتاريخ؟</label>
+                    {{ f.theDate}}
+            </div>
+            <div class="form-group">
+                    <label>هل التزمت وكالة الأسفار بوعودها فيما يخص تصنيف الفندق؟</label>
+                    {{ f.hotelRate}}
+            </div>
+            <div class="form-group">
+                    <label>هل التزمت وكالة الأسفار بوعودها فيما يخص المسافة بين الفندق والمسجد الحرام؟</label>
+                    {{ f.commitmentDistance}}
+            </div>
+            <div class="form-group">
+                    <label>هل رافقكم رئيس مجموعة؟</label>
+                    {{ f.president}}
+            </div>
+            <div class="form-group">
+                    <label>كيف كان مردود رئيس المجموعة؟</label>
+                    {{ f.presidentRate}}
+            </div>
+            <div class="form-group">
+                    <label>اسم الفندق بمكة المكرمة</label>
+                    {{ f.hotelName}}
+            </div>
+            <div class="form-group">
+                    <label>هل الفندق موجود في شارع يسهل الولوج إليه بالحافلات؟</label>
+                    {{ f.streetbus}}
+            </div>
+            <div class="form-group">
+                    <label>ما هي الخدمات الموجودة في محيط الفندق؟</label>
+                    {{ f.servicesOutside}}
+            </div>
+            <div class="form-group">
+                    <label>كيف بدت لك المسافة بين الفندق والكعبة؟</label>
+                    {{ f.distanceHotel}}
+            </div>
+            <div class="form-group">
+                    <label>ما هي حالة الأثاث بالغرفة؟</label>
+                    {{ f.furniture}}
+            </div>
+            <div class="form-group">
+                    <label>هل الغرفة مكيّفة؟</label>
+                    {{ f.conditioning}}
+            </div>
+            <div class="form-group">
+                    <label>هل كانت حالة الحمام جيّدة؟</label>
+                    {{ f.bathroom}}
+            </div>
+            <div class="form-group">
+                    <label>هل يقع تغيير المناشف واللحافات يوميًا؟</label>
+                    {{ f.towel}}
+            </div>
+            <div class="form-group">
+                    <label>هل يقع تنظيف الغرفة يوميًا؟</label>
+                    {{ f.roomClean}}
+            </div>
+            <div class="form-group">
+                    <label>هل تتوفر خدمة الويفي (WiFi) في الفندق؟</label>
+                    {{ f.wifi}}
+            </div>
+            <div class="form-group">
+                    <label>هل المصاعد بعدد كاف يتناسب وطاقة الإيواء؟</label>
+                    {{ f.elevator}}
+            </div>
+            <div class="form-group">
+                    <label>هل كانت نوعيّة الأكل جيّدة؟</label>
+                    {{ f.food}}
+            </div>
+            <div class="form-group">
+                    <label>اسم الفندق بالمدينة المنوّرة</label>
+                    {{ f.hotelNameMadina}}
+            </div>
+            <div class="form-group">
+                    <label>هل الفندق موجود في شارع يسهل الولوج إليه بالحافلات؟</label>
+                    {{ f.streetbusMadina}}
+            </div>
+            <div class="form-group">
+                    <label>ما هي الخدمات الموجودة في محيط الفندق؟</label>
+                    {{ f.servicesOutsideMadina}}
+            </div>
+            <div class="form-group">
+                    <label>كيف بدت لك المسافة بين الفندق والمسجد النبوي؟</label>
+                    {{ f.distanceHotelMadina}}
+            </div>
+            <div class="form-group">
+                    <label>ما هي حالة الأثاث بالغرفة؟</label>
+                    {{ f.furnitureMadina}}
+            </div>
+            <div class="form-group">
+                    <label>هل الغرفة مكيّفة؟</label>
+                    {{ f.conditioningMadina}}
+            </div>
+            <div class="form-group">
+                    <label>هل كانت حالة الحمام جيّدة؟</label>
+                    {{ f.bathroomMadina}}
+            </div>
+            <div class="form-group">
+                    <label>هل يقع تغيير المناشف واللحافات يوميًا؟</label>
+                    {{ f.towelMadina}}
+            </div>
+            <div class="form-group">
+                    <label>هل يقع تنظيف الغرفة يوميًا؟</label>
+                    {{ f.roomCleanMadina}}
+            </div>
+            <div class="form-group">
+                    <label>هل تتوفر خدمة الويفي (WiFi) في الفندق؟</label>
+                    {{ f.wifiMadina}}
+            </div>
+            <div class="form-group">
+                    <label>هل المصاعد بعدد كاف يتناسب وطاقة الإيواء؟</label>
+                    {{ f.elevatorMadina}}
+            </div>
+            <div class="form-group">
+                    <label>هل كانت نوعيّة الأكل جيّدة؟</label>
+                    {{ f.foodMadina}}
+            </div>
+            
+            <button type="submit" id="confirmer" class="btn btn-primary">ارسال</button>
+        </form>
+    </div>
+</center>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
